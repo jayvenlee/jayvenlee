@@ -1,0 +1,28 @@
+//背景移动效果↓
+	var move=0;
+	var scrolly;
+	$(window).scroll(function(){
+		if(move>-160&&window.scrollY){
+			if(scrolly-window.scrollY<0){
+				console.log("向下")
+				move-=10;
+				$(".investment").css({
+					"background-position-y":move+"px"
+				})
+			}else{
+				console.log("向上")
+				if(move<0){
+					move+=10;
+					$(".investment").css({
+					"background-position-y":move+"px"
+					})
+				}else{
+					move=0;
+				}
+			}
+		}else{
+			move=0;
+		}
+		scrolly=window.scrollY;
+	})
+	//背景移动效果↑
